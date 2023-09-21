@@ -6,17 +6,17 @@ POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
 {
-    "title": "hola 1",
-    "description": "hola",
-    "poster": "www.google.com"
+    "title": "Cuarta tarea nueva ",
+    "description": "descripcion",
+    "poster": "https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg"
 }
 
 ### MODIFICAR TAREA
 PUT http://localhost:3000/api/tasks/2
 Content-Type: application/json
 
-{
-    "title": "pppppp"
+{ 
+    "title": "21"
 }
 
 ### ELIMINAR
