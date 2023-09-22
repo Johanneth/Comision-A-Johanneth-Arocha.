@@ -1,8 +1,22 @@
+
 const contenedor = document.getElementById("container-row");
 const btnCrear = document.getElementById("btn-new");
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
 const btnSave = document.getElementById("btn-save");
 const form = document.getElementById("formulario");
+
+const themeDark  = () => {
+  document.querySelector("body").setAttribute("data-bs-theme", "dark");
+  document.getElementById("dl-icon").setAttribute("class", "bi bi-sun");
+} 
+const themeLight  = () => {
+  document.querySelector('body').setAttribute('data-bs-theme', 'light');
+  document.getElementById('dl-icon').setAttribute('class', 'bi bi-moon-fill');
+} 
+const cambiarTheme = ( ) =>{
+  document.querySelector('body').getAttribute('data-bs-theme')  === 'light'?
+  themeDark() : themeLight() ;
+}
 
 let html = "";
 let option = "";
@@ -27,7 +41,7 @@ document.addEventListener('click', (event) => {
         const article = event.target.closest('.col-4')
         const idArticle = article.dataset.id
 
-        fetch(`http://localhost:3000/api/tasks/${idArticle}`, {
+        fetch(`http://localhost:3000/forums/${idArticle}`, {
             method: 'DELETE'
         }).then(res => {
             if (res.ok) {
@@ -64,22 +78,22 @@ form.addEventListener("submit", (event) => {
   // console.log("submit");
 
   if (option === "new") {
-    const newTask = {
+    const newForum = {
       title: inputTitle.value,
       description: inputDescription.value,
       poster: inputPoster.value,
     };
 
-    fetch('http://localhost:3000/api/tasks', {
+    fetch('http://localhost:3000/forums', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newTask)
+      body: JSON.stringify(newForum)
     }).then(res => {
       console.log(res)
         if (res.ok) {
-          alert("Task created successfully");
+          alert("Forum created successfully");
           myModal.hide();
           location.reload();
         }
@@ -90,21 +104,21 @@ form.addEventListener("submit", (event) => {
   }
 
   if (option === "edit") {
-    const newTask = {
+    const newForum = {
       title: inputTitle.value,
       description: inputDescription.value,
       poster: inputPoster.value,
     };
 
-    fetch(`http://localhost:3000/api/tasks/${idForm}`, {
+    fetch(`http://localhost:3000/forums/${idForm}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newTask)
+      body: JSON.stringify(newForum)
     }).then(res => {
       if(res.ok){
-        alert('Task edited successfully')
+        alert('Forum edited successfully')
         myModal.hide();
         location.reload();
       }

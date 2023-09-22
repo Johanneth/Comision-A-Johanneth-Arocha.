@@ -2,10 +2,7 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database.js";
 
 
-
-//aca debemos colocar todos los que va en la tablaaa corregir 
-
-export const TaskModel = sequelize.define('Task', {
+export const ForumModel = sequelize.define('Forum', {
     title: {
         type: DataTypes.STRING,
         allowNull: true
