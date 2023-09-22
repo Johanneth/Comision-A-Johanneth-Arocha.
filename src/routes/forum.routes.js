@@ -11,15 +11,15 @@ const forumRouter = Router ();
 forumRouter.get('/', ctrlView)
 
 //endpoint para traer todas las tareas
-forumRouter.get('/forums', ctrlGetForums)
+forumRouter.get('/api/forums', ctrlGetForums)
 
 //endpoint para crear todas las tareas
-forumRouter.post('/forums', createForumSchema, validator, ctrlCreateForum)
+forumRouter.post('/api/forums', createForumSchema, validator, ctrlCreateForum)
 
 //endpoint para modificar todas las tareas
-forumRouter.put('/forums/:id', editForumSchema, validator, ctrlUpdateForum)
+forumRouter.put('/api/forums/:id', editForumSchema, validator, ctrlUpdateForum)
 
 //endpoint para eliminar todas las tareas
-forumRouter.delete('/forums/:id', ctrlDeleteForum)
+forumRouter.delete('/api/forums/:id', ctrlDeleteForum)
 
 export { forumRouter }

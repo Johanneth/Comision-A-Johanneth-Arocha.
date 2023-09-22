@@ -1,10 +1,4 @@
 
-const contenedor = document.getElementById("container-row");
-const btnCrear = document.getElementById("btn-new");
-const myModal = new bootstrap.Modal(document.getElementById("myModal"));
-const btnSave = document.getElementById("btn-save");
-const form = document.getElementById("formulario");
-
 const themeDark  = () => {
   document.querySelector("body").setAttribute("data-bs-theme", "dark");
   document.getElementById("dl-icon").setAttribute("class", "bi bi-sun");
@@ -17,6 +11,13 @@ const cambiarTheme = ( ) =>{
   document.querySelector('body').getAttribute('data-bs-theme')  === 'light'?
   themeDark() : themeLight() ;
 }
+
+const contenedor = document.getElementById("container-row");
+const btnCrear = document.getElementById("btn-new");
+const myModal = new bootstrap.Modal(document.getElementById("myModal"));
+const btnSave = document.getElementById("btn-save");
+const form = document.getElementById("formulario");
+
 
 let html = "";
 let option = "";
@@ -41,7 +42,7 @@ document.addEventListener('click', (event) => {
         const article = event.target.closest('.col-4')
         const idArticle = article.dataset.id
 
-        fetch(`http://localhost:3000/forums/${idArticle}`, {
+        fetch(`http://localhost:3000/api/forums/${idArticle}`, {
             method: 'DELETE'
         }).then(res => {
             if (res.ok) {
@@ -84,7 +85,7 @@ form.addEventListener("submit", (event) => {
       poster: inputPoster.value,
     };
 
-    fetch('http://localhost:3000/forums', {
+    fetch('http://localhost:3000/api/forums', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -110,7 +111,7 @@ form.addEventListener("submit", (event) => {
       poster: inputPoster.value,
     };
 
-    fetch(`http://localhost:3000/forums/${idForm}`, {
+    fetch(`http://localhost:3000/api/forums/${idForm}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

@@ -21,7 +21,7 @@ export const ctrlGetForums = async (req, res) => {
     try {
         const forum = await ForumModel.findAll();
         if(!forum) return res.status(404)
-        return res.status(200).json(forum)
+        return res.status(200).json(forum);                    //json(forum)
     } catch (error) {
         console.error(error)
         return res.status(500).json({

@@ -20,6 +20,7 @@ app.use(helmet({
     contentSecurityPolicy: false
 }))
 
+
 app.use(express.static(path.join(__dirname, "src", "public")))
 
 app.set('views', path.join(__dirname, "src", "views"))
@@ -28,6 +29,12 @@ app.set('view engine', 'ejs');
 const port = 3000;
 
 app.use(`/`, forumRouter)
+
+app.get('/crear',(req, res) => {
+    res.render("crear")});
+
+
+
 
 app.listen(port, () => {
     console.log(`server listening http://localhost:${port}`)
