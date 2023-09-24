@@ -4,13 +4,13 @@ import { ForumModel } from "../models/Forums.js"
 export const ctrlView = async (req, res) => {
     try {
         const forums = await ForumModel.findAll();
-        res.render('forums.ejs', {forums})
+        res.render('index', {forums})
 
 
     } catch (error) {
         console.error(error)
         return res.status(500).json({
-            message: 'Error Server'
+            message: 'Error en el servidor'
         })
     }
 }
@@ -19,9 +19,8 @@ export const ctrlView = async (req, res) => {
 //controlador para traer todas las tareas
 export const ctrlGetForums = async (req, res) => {
     try {
-        const forum = await ForumModel.findAll();
-        if(!forum) return res.status(404)
-        return res.status(200).json(forum);                    //json(forum)
+        const forums = await ForumModel.findAll();
+        res.render('forums', {forums})                    
     } catch (error) {
         console.error(error)
         return res.status(500).json({
@@ -65,7 +64,7 @@ export const ctrlUpdateForum = async (req, res) => {
     } catch (error) {
         console.error(error)
         return res.status(500).json({
-            message: 'Error Server'
+            message: 'Error en el servidor'
         })
     }
 }

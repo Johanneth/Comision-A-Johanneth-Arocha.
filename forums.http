@@ -1,11 +1,11 @@
 ### VISTA
-GET http://localhost:3000/forums
+GET http://localhost:3000/
 
 ### TRAER TAREAS
-GET http://localhost:3000/api/forums
+GET http://localhost:3000/forums
 
 ### CREAR TAREA
-POST http://localhost:3000/api/forums
+POST http://localhost:3000/forums
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### MODIFICAR TAREA
-PUT http://localhost:3000/api/forums/2
+PUT http://localhost:3000/forums/2
 Content-Type: application/json
 
 { 
@@ -23,4 +23,4 @@ Content-Type: application/json
 }
 
 ### ELIMINAR
-DELETE http://localhost:3000/api/forums/3
+DELETE http://localhost:3000/forums/3

@@ -30,10 +30,8 @@ const port = 3000;
 
 app.use(`/`, forumRouter)
 
-app.get('/crear',(req, res) => {
-    res.render("crear")});
-
-
+app.get('/forums',(req, res) => {
+    res.render("forums")});
 
 
 app.listen(port, () => {

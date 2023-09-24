@@ -2,39 +2,14 @@
 <%- include('partials/navegation') -%>
 
     <header class="d-flex justify-content-center">
-        <h1>FORUMS</h1>
+        <h1 class="tituloP">¡Imagina y comenta!</h1><br>        
     </header>
     <main class="d-flex flex-column align-items-center">
-        <button type="button" class="btn btn-primary" id="btn-new">NEW FORUM</button>
+        <div><img class="imagen" src="/img/forumi.png" alt=""></div><br><br>     
+        <button type="button" class="btn btn-primary" id="btn-new">NUEVO FORO</button>        
         <div class="container text-center">
             <div class="row" id="container-row">
-                <% forums.forEach(forum=> { %>
-
-                    <article class="col-4 d-flex justify-content-center mb-3" data-id="<%= forum.id %>">
-                        <div class="card" style="width: 40rem;">
-                            <img src="<%= forum.poster %>" class="card-img-top" alt="nuevo titulo">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <%= forum.title %>
-                                </h5>
-                                <p class="card-text">
-                                    <%= forum.description %>
-                                </p>
-                                <p class="card-text">
-                                    Creado: <%= forum.createdAt %>
-                                </p>
-                                <p class="card-text">
-                                    <%= (forum.updatedAt).toLocaleString() %>
-                                </p>
-                                <div class="d-flex flex-column justify-content-center gap-2">
-                                    <button class="btn btn-secondary" id="btn-edit">Edit</button>
-                                    <button type="" class="btn btn-danger" id="btn-delete">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <% }) %>
+                
             </div>
         </div>
 
@@ -53,7 +28,7 @@
                                 <input type="text" class="form-control" id="inputTitle">
                             </div>
                             <div class="mb-3">
-                                <label for="inputDescription" class="col-form-label">Description:</label>
+                                <label for="inputDescription" class="form-label">Description:</label>
                                 <textarea class="form-control" id="inputDescription" rows="3"></textarea>
                             </div>
                             <div class="mb-3">

@@ -9,3 +9,20 @@
     align-items: center;
 }
 
+.tituloP{
+    color: #0d6efd;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    height: 16vh;
+}
+
+
+/* hay que colocarla responsive */
+.imagen{
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+

@@ -42,7 +42,7 @@ document.addEventListener('click', (event) => {
         const article = event.target.closest('.col-4')
         const idArticle = article.dataset.id
 
-        fetch(`http://localhost:3000/api/forums/${idArticle}`, {
+        fetch(`http://localhost:3000/forums/${idArticle}`, {
             method: 'DELETE'
         }).then(res => {
             if (res.ok) {
@@ -85,7 +85,7 @@ form.addEventListener("submit", (event) => {
       poster: inputPoster.value,
     };
 
-    fetch('http://localhost:3000/api/forums', {
+    fetch('http://localhost:3000/forums', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ form.addEventListener("submit", (event) => {
     }).then(res => {
       console.log(res)
         if (res.ok) {
-          alert("Forum created successfully");
+          alert("Forum creado satisfactoriamente");
           myModal.hide();
           location.reload();
         }
@@ -111,7 +111,7 @@ form.addEventListener("submit", (event) => {
       poster: inputPoster.value,
     };
 
-    fetch(`http://localhost:3000/api/forums/${idForm}`, {
+    fetch(`http://localhost:3000/forums/${idForm}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -119,7 +119,7 @@ form.addEventListener("submit", (event) => {
       body: JSON.stringify(newForum)
     }).then(res => {
       if(res.ok){
-        alert('Forum edited successfully')
+        alert('Forum editado satisfactoriamente')
         myModal.hide();
         location.reload();
       }
