@@ -18,11 +18,42 @@
 }
 
 
-/* hay que colocarla responsive */
 .imagen{
     display: flex;
     justify-content: center;
-    width: 600px;
-    height: 400px;
+    width:100%
+
 }
 
+.tituloForums{
+    color: #0d6efd;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.imagenP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:20%;
+}
+
+.imagen_p{    
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.imagen_nosotros{    
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.imagenN{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:15%;
+}

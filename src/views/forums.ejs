@@ -2,10 +2,9 @@
 <%- include('partials/navegation') -%>
 
     <header class="d-flex justify-content-center">
-        <h1>FORUMS</h1>
+        <h1 class="tituloForums" style="margin: 8px; padding:8px">Foro 24</h1>
     </header>
-    <main class="d-flex flex-column align-items-center">
-        <button type="button" class="btn btn-primary" id="btn-new">NEW FORUM</button>
+    <main class="d-flex flex-column align-items-center">        
         <div class="container text-center">
             <div class="row" id="container-row">
                 <% forums.forEach(forum=> { %>
@@ -27,8 +26,8 @@
                                     <%= (forum.updatedAt).toLocaleString() %>
                                 </p>
                                 <div class="d-flex flex-column justify-content-center gap-2">
-                                    <button class="btn btn-secondary" id="btn-edit">Edit</button>
-                                    <button type="" class="btn btn-danger" id="btn-delete">Delete</button>
+                                    <button class="btn btn-secondary" id="btn-edit">Editar</button>
+                                    <button type="" class="btn btn-danger" id="btn-delete">Eliminar</button>
                                 </div>
                             </div>
                         </div>
@@ -43,33 +42,35 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">FORUM</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">NUEVO FORO</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="formulario">
                             <div class="mb-3">
-                                <label for="inputTitle" class="col-form-label">Title:</label>
+                                <label for="inputTitle" class="col-form-label">Título:</label>
                                 <input type="text" class="form-control" id="inputTitle">
                             </div>
                             <div class="mb-3">
-                                <label for="inputDescription" class="col-form-label">Description:</label>
+                                <label for="inputDescription" class="col-form-label">Descripción:</label>
                                 <textarea class="form-control" id="inputDescription" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="inputPoster" class="col-form-label">PosterURL:</label>
+                                <label for="inputPoster" class="col-form-label">Imagen:</label>
                                 <input type="url" class="form-control" id="inputPoster">
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 <button type="submit" class="btn btn-primary" id="btn-save"></button>
                             </div>
+                            
                         </form>
                     </div>
 
                 </div>
             </div>
-        </div>
+        </div><br>
+        <button type="button" class="btn btn-primary" id="btn-new">NUEVA PUBLICACIÓN</button>
     </main>
 
     <%- include("partials/footer") -%>

@@ -29,7 +29,7 @@ const inputPoster = document.getElementById("inputPoster");
 
 btnCrear.addEventListener("click", () => {
   option = "new";
-  btnSave.textContent = "new";
+  btnSave.textContent = "Crear";
   inputTitle.value = "";
   inputDescription.value = "";
   inputPoster.value = "";

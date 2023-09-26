@@ -24,7 +24,7 @@ export const ctrlGetForums = async (req, res) => {
     } catch (error) {
         console.error(error)
         return res.status(500).json({
-            message:'Error Server'
+            message:'Error en el Servidor!'
         })
         
     }
@@ -40,7 +40,7 @@ export const ctrlCreateForum = async (req, res) => {
     } catch (error) {
         console.error(error)
         return res.status(500).json({
-            message: 'Error Server'
+            message: 'Error en el Servidor!'
         })
     }
 }
@@ -90,7 +90,7 @@ export const ctrlDeleteForum = async (req, res) => {
     } catch (error) {
         console.error(error)
         return res.status(500).json({
-            message: 'Error Server'
+            message: 'Error'
         })
     }
 }

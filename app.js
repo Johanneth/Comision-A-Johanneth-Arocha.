@@ -34,6 +34,12 @@ app.get('/forums',(req, res) => {
     res.render("forums")});
 
 
+app.get('/preguntas',(req, res) => {
+    res.render("preguntas")});
+    
+app.get('/nosotros',(req, res) => {
+    res.render("nosotros")});    
+
 app.listen(port, () => {
     console.log(`server listening http://localhost:${port}`)
     startDb();
